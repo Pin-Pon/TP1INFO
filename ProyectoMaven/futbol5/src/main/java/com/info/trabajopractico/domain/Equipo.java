@@ -1,6 +1,7 @@
 package com.info.trabajopractico.domain;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -10,6 +11,20 @@ public class Equipo {
     private LocalDate fechaCreacion;
     private Entrenador entrenador;
     private List<Jugador> listaJugadores = new ArrayList<>();
+
+    public Equipo(String nombre, LocalDate fechaCreacion, Entrenador entrenador, List<Jugador> listaJugadores) {
+        this.nombre = nombre;
+        this.fechaCreacion = fechaCreacion;
+        this.entrenador = entrenador;
+        this.listaJugadores = listaJugadores;
+    }
+    public Equipo(String nombre, LocalDate fechaCreacion, Entrenador entrenador) {
+        this.nombre = nombre;
+        this.fechaCreacion = fechaCreacion;
+        this.entrenador = entrenador;
+
+    }
+
 
     public Equipo(String nombre, LocalDate fechaCreacion) {
 
@@ -55,11 +70,10 @@ public class Equipo {
 
     @Override
     public String toString() {
-        return "Equipo{" +
-                "nombre='" + nombre + '\'' +
-                ", fechaCreacion=" + fechaCreacion +
-                ", entrenador=" + entrenador +
-                ", listaJugadores=" + listaJugadores +
-                '}';
+        return "Equipo: " + '\n' +
+                "Nombre:'" + nombre + '\n' +
+                " Fecha Creacion: " + fechaCreacion + '\n' +
+                " Entrenador: " + entrenador + '\n' +
+                " Lista Jugadores: " + listaJugadores;
     }
 }

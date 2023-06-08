@@ -43,27 +43,27 @@ public class Posicion {
         this.listaJugadores.add( listaJugadores);
     }
 
+
+    @Override
+    public String toString() {
+        return "Posicion: " +
+                "Nombre: " + nombre + '\n' +
+                "Descripcion: " + descripcion +'\n' +
+                "Lista Jugadores: " + listaJugadores ;
+    }
 /**
     @Override
     public String toString() {
-        return "Posicion{" +
-                "nombre='" + nombre + '\'' +
-                ", descripcion='" + descripcion + '\'' +
-                ", listaJugadores=" + listaJugadores +
-                '}';
-    }
- **/
-    @Override
-    public String toString() {
         String mostrar="";
-        mostrar = "Posicion{" +
-                "nombre='" + nombre + '\'' +
-                ", descripcion='" + descripcion + '\'' +
-                ", listaDeProductos=[" ;
+        mostrar = "Posicion: " +
+                "Nombre: " + nombre + '\n' +
+
+                "Lista De Jugadores: " ;
         for ( int i=0; i < listaJugadores.size();i++  ) {
             mostrar = mostrar + listaJugadores.get(i).getNombre() + ", ";
         }
-        mostrar += "]";
+        mostrar += "";
         return mostrar;
     }
+    **/
 }

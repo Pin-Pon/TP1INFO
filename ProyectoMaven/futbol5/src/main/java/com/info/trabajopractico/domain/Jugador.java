@@ -130,17 +130,16 @@ public class Jugador {
 
         @Override
         public String toString() {
-                return "Jugador{" +
-                        "id=" + id +
-                        ", nombre='" + nombre + '\'' +
-                        ", apellido='" + apellido + '\'' +
-                        ", altura=" + altura +
-                        ", posicion='" + posicion + '\'' +
-                        ", goles=" + goles +
-                        ", partidos=" + partidos +
-                        ", esCapitan=" + esCapitan +
-                        ", numeroCamiseta=" + numeroCamiseta +
-                        ", equipo=" + equipo +
-                        '}';
+                return "Jugador: " +
+                        "Identificador: " + id +
+                        " Nombre: " + nombre + '\n' +
+                        " Apellido: " + apellido + '\n' +
+                        " Altura: " + altura + '\n' +
+                        " Posicion: '" + posicion + '\n' +
+                        " Goles: " + goles + '\n' +
+                        " Partidos: " + partidos + '\n' +
+                        " Es Capitan? " + esCapitan + '\n' +
+                        " Numero Camiseta: " + numeroCamiseta + '\n' +
+                        " Equipo: " + equipo ;
         }
 }
