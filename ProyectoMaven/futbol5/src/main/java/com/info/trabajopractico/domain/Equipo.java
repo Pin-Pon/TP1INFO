@@ -3,6 +3,7 @@ package com.info.trabajopractico.domain;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class Equipo {
     private String nombre;
@@ -10,11 +11,12 @@ public class Equipo {
     private Entrenador entrenador;
     private List<Jugador> listaJugadores = new ArrayList<>();
 
-    public Equipo(String nombre, LocalDate fechaCreacion, Entrenador entrenador, List<Jugador> listaJugadores) {
+    public Equipo(String nombre, LocalDate fechaCreacion) {
+
         this.nombre = nombre;
         this.fechaCreacion = fechaCreacion;
-        this.entrenador = entrenador;
-        this.listaJugadores = listaJugadores;
+
+
     }
     public Equipo(){
     }
