@@ -40,7 +40,7 @@ public class Entrenador {
     public String toString() {
         return "Entrenador: " +
                 "Nombre: '" + nombre + '\n' +
-                " Apellido: '" + apellido + '\n' +
-                " Edad:" + edad ;
+                "Apellido: '" + apellido + '\n' +
+                "Edad:" + edad ;
     }
 }

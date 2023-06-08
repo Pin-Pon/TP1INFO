@@ -28,14 +28,13 @@ public class BootstrapData {
 
         //posicionMap = new HashMap();
 
+
         cargarEquipos(equipoMAP);
-        System.out.println(equipoMAP);
+        //System.out.println(equipoMAP);
         cargarJugadores(jugadorList);
-        System.out.println(jugadorList);
-
-
+        //System.out.println(jugadorList);
         cargarPosiciones(posicionMap);
-        System.out.println(posicionMap);
+        //System.out.println(posicionMap);
     }
 
     public static void cargarJugadores(Map<Equipo,Jugador>jugadorList){

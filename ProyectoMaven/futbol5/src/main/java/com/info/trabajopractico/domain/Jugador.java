@@ -132,14 +132,14 @@ public class Jugador {
         public String toString() {
                 return "Jugador: " +
                         "Identificador: " + id +
-                        " Nombre: " + nombre + '\n' +
-                        " Apellido: " + apellido + '\n' +
-                        " Altura: " + altura + '\n' +
-                        " Posicion: '" + posicion + '\n' +
-                        " Goles: " + goles + '\n' +
-                        " Partidos: " + partidos + '\n' +
-                        " Es Capitan? " + esCapitan + '\n' +
-                        " Numero Camiseta: " + numeroCamiseta + '\n' +
-                        " Equipo: " + equipo ;
+                        "Nombre: " + nombre + '\n' +
+                        "Apellido: " + apellido + '\n' +
+                        "Altura: " + altura + '\n' +
+                        "Posicion: '" + posicion + '\n' +
+                        "Goles: " + goles + '\n' +
+                        "Partidos: " + partidos + '\n' +
+                        "Es Capitan? " + esCapitan + '\n' +
+                        "Numero Camiseta: " + numeroCamiseta + '\n' +
+                        "Equipo: " + equipo ;
         }
 }

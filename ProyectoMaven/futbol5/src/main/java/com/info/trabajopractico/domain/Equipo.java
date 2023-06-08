@@ -64,16 +64,16 @@ public class Equipo {
         return listaJugadores;
     }
 
-    public void setListaJugadores(List<Jugador> listaJugadores) {
-        this.listaJugadores = listaJugadores;
+    public void setListaJugadores(Jugador jugador) {
+        this.listaJugadores.add(jugador) ;
     }
 
     @Override
     public String toString() {
         return "Equipo: " + '\n' +
                 "Nombre:'" + nombre + '\n' +
-                " Fecha Creacion: " + fechaCreacion + '\n' +
-                " Entrenador: " + entrenador + '\n' +
-                " Lista Jugadores: " + listaJugadores;
+                "Fecha Creacion: " + fechaCreacion + '\n' +
+                "Entrenador: " + entrenador + '\n' +
+                "Lista Jugadores: " + listaJugadores;
     }
 }
