@@ -8,7 +8,7 @@ public class InputService implements InputServiceInterface {
     public static Scanner scanner;
     @Override
 
-    public  void createScanner(){
+    public static void createScanner(){
         if(scanner == null){
             scanner = new Scanner(System.in);
         }
