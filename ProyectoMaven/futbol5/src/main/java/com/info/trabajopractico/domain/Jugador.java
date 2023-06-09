@@ -103,8 +103,7 @@ public class Jugador {
         public void setPartidos(int partidos) {
                 this.partidos = partidos;
         }
-
-        public boolean isEsCapitan() {
+        public Boolean getEsCapitan() {
                 return esCapitan;
         }
 
@@ -141,5 +140,8 @@ public class Jugador {
                         "Es Capitan? " + esCapitan + '\n' +
                         "Numero Camiseta: " + numeroCamiseta + '\n' +
                         "Equipo: " + equipo ;
+        }
+
+        public void isEsCapitan() {
         }
 }

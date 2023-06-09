@@ -2,22 +2,25 @@ package com.info.trabajopractico.domain;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 public class Equipo {
     private String nombre;
     private LocalDate fechaCreacion;
     private Entrenador entrenador;
-    private List<Jugador> listaJugadores = new ArrayList<>();
+    protected Map<String,Jugador> equipoJugadorMap = new HashMap<>();
 
-    public Equipo(String nombre, LocalDate fechaCreacion, Entrenador entrenador, List<Jugador> listaJugadores) {
+    public Equipo(String nombre, LocalDate fechaCreacion, Entrenador entrenador, Map<String, Jugador> equipoJugadorMap) {
         this.nombre = nombre;
         this.fechaCreacion = fechaCreacion;
         this.entrenador = entrenador;
-        this.listaJugadores = listaJugadores;
+        this.equipoJugadorMap = equipoJugadorMap;
     }
+    public void agregarJugador(Jugador jugador){
+
+        equipoJugadorMap.put(jugador.getEquipo().getNombre(),jugador );
+    }
+
     public Equipo(String nombre, LocalDate fechaCreacion, Entrenador entrenador) {
         this.nombre = nombre;
         this.fechaCreacion = fechaCreacion;
@@ -60,20 +63,21 @@ public class Equipo {
         this.entrenador = entrenador;
     }
 
-    public List<Jugador> getListaJugadores() {
-        return listaJugadores;
+    public Map<String, Jugador> getEquipoJugadorMap() {
+        return equipoJugadorMap;
     }
 
-    public void setListaJugadores(Jugador jugador) {
-        this.listaJugadores.add(jugador) ;
+    public void setEquipoJugadorMap(Map<String, Jugador> equipoJugadorMap) {
+        this.equipoJugadorMap = equipoJugadorMap;
     }
 
     @Override
     public String toString() {
-        return "Equipo: " + '\n' +
-                "Nombre:'" + nombre + '\n' +
-                "Fecha Creacion: " + fechaCreacion + '\n' +
-                "Entrenador: " + entrenador + '\n' +
-                "Lista Jugadores: " + listaJugadores;
+        return "Equipo{" +
+                "nombre='" + nombre + '\'' +
+                ", fechaCreacion=" + fechaCreacion +
+                ", entrenador=" + entrenador +
+                ", equipoJugadorMap=" + equipoJugadorMap +
+                '}';
     }
 }
