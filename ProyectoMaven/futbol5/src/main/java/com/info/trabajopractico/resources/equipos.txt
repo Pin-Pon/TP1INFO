@@ -1,0 +1,5 @@
+Tamara,Hidalgo,1.49,2,1,false,5,River,MEDIOCAMPISTA
+Torta,Rica,1.43,3,1,false,2,Boca,DEFENSOR
+Gaston,Bossi,1.58,4,1,true,6,Estudiante,MEDIOCAMPISTA
+Sofia,Barbosa,1.63,6,1,false,7,Racing,MEDIOCAMPISTA
+Denny,MacDonagh,1.26,8,1,false,8,River,MEDIOCAMPISTA

@@ -34,8 +34,11 @@ public class Jugador {
                 this.equipo = equipo;
                 this.posicion = posicion;
         }
-        public Jugador(){
+        public Jugador(String nom, String ape, double medida, int goles, int partidosJugados, boolean esCapitan, int camiseta, String equipo){
 
+        }
+
+        public Jugador(String nom, String ape, double medida, int goles, int partidosJugados, boolean esCapitan, int camiseta, String equipo, String posicion) {
         }
 
         public UUID getId() {

@@ -5,6 +5,9 @@ import com.info.trabajopractico.domain.Entrenador;
 import com.info.trabajopractico.domain.Equipo;
 import com.info.trabajopractico.domain.Jugador;
 import com.info.trabajopractico.domain.Posicion;
+import com.info.trabajopractico.servicio.menu.menuprincipal.MenuEquipos;
+import com.info.trabajopractico.servicio.menu.menuprincipal.MenuJugador;
+import com.info.trabajopractico.servicio.menu.menuprincipal.MenuPrincipal;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -16,6 +19,10 @@ import java.util.Map;
 import static com.info.trabajopractico.bootstrap.constantes.DescripcionPosiciones.DELANTERO;
 
 public class BootstrapData {
+    public static final MenuPrincipal menuPrincipal = new MenuPrincipal();
+    public static List<Equipo> equipos;
+    public static final MenuEquipos menuEquipo = new MenuEquipos();
+    public static final MenuJugador menuJugador = new MenuJugador();
     public static Map<String, Posicion> posicionMap = new HashMap<>();
     public static Map<Equipo,Jugador> jugadorList = new HashMap<>();
     //private List<Jugador> listaJugadores = new ArrayList<>();
@@ -25,6 +32,7 @@ public class BootstrapData {
 
 
     public static void initData(){
+        equipos = new ArrayList<Equipo>();
 
         //posicionMap = new HashMap();
 

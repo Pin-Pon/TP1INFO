@@ -6,7 +6,10 @@ import java.util.Scanner;
 
 public class InputService implements InputServiceInterface {
     public static Scanner scanner;
-    @Override
+
+    public static void crearEscaner() {
+    }
+
 
     public  void createScanner(){
         if(scanner == null){
