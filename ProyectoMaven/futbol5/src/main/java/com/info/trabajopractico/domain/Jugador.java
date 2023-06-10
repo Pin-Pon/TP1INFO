@@ -41,6 +41,10 @@ public class Jugador {
         public Jugador(String nom, String ape, double medida, int goles, int partidosJugados, boolean esCapitan, int camiseta, String equipo, String posicion) {
         }
 
+        public Jugador() {
+
+        }
+
         public UUID getId() {
                 return id;
         }

@@ -11,6 +11,7 @@ import java.util.Scanner;
 
 
 public class Importar {
+    /**
     Path archivo = Paths.get("equipo.txt");
     Scanner lector = new Scanner(archivo);
 
@@ -42,5 +43,6 @@ public class Importar {
 
     public Importar() throws IOException {
     }
+     **/
 
 }
