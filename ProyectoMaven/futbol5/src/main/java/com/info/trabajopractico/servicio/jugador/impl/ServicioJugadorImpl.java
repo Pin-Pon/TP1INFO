@@ -13,7 +13,7 @@ public class ServicioJugadorImpl implements ServicioJugador {
     @Override
     public Jugador crearJugador(){
 
-    Jugador jugador = new Jugador(nom, ape, medida, goles, partidosJugados, esCapitan, camiseta, equipo);
+    Jugador jugador = new Jugador();
 
         jugador.setId(UUID.randomUUID());
         System.out.println("INGRESE EL NOMBRE DEL JUGADOR: ");
@@ -37,7 +37,7 @@ public class ServicioJugadorImpl implements ServicioJugador {
 }
 
     public Jugador asignarEquipo(Equipo equipo) {
-        Jugador jugador = new Jugador(nom, ape, medida, goles, partidosJugados, esCapitan, camiseta, equipo);
+        Jugador jugador = new Jugador();
         jugadorList.put(equipo,jugador);
        return (Jugador) jugadorList;
     }

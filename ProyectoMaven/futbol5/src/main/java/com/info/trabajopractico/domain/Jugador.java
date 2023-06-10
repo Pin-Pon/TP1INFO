@@ -41,6 +41,16 @@ public class Jugador {
         public Jugador(String nom, String ape, double medida, int goles, int partidosJugados, boolean esCapitan, int camiseta, String equipo, String posicion) {
         }
 
+        public Jugador(String nombre, String apellido, double altura, int goles, int partidos, boolean esCapitan, int numeroCamiseta) {
+                this.nombre = nombre;
+                this.apellido = apellido;
+                this.altura = altura;
+                this.goles = goles;
+                this.partidos = partidos;
+                this.esCapitan = esCapitan;
+                this.numeroCamiseta = numeroCamiseta;
+        }
+
         public Jugador() {
 
         }

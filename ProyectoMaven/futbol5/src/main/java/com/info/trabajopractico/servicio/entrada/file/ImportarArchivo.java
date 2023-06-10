@@ -20,6 +20,8 @@ public class ImportarArchivo {
         //Inicializamos lista de productos
         List<Jugador> jugadoresImportados = new ArrayList<>();
 
+
+
         try{
             //Lineas del archivo
             List<String> lineas = FileUtils.readLines(new File(rutaArchivo), StandardCharsets.UTF_8);
@@ -36,13 +38,11 @@ public class ImportarArchivo {
                 int partidosJugados = Integer.parseInt(partes[4]);
                 boolean esCapitan = Boolean.parseBoolean(partes[5]);
                 int camiseta = Integer.parseInt(partes[6]);
-                String equipo = partes[7];
-                Equipo equipoObject = BootstrapData.equipos.get(Integer.parseInt(equipo));
-                String posicion = partes[8];
-                Posicion posicionObject = BootstrapData.posicionMap.get(posicion);
 
 
-                Jugador jugador2023 = new Jugador(nombre,apellido,medida,goles,partidosJugados,esCapitan,camiseta,equipoObject,posicionObject);
+
+
+                Jugador jugador2023 = new Jugador(nombre,apellido,medida,goles,partidosJugados,esCapitan,camiseta);
                 jugadoresImportados.add(jugador2023);
             }
 
