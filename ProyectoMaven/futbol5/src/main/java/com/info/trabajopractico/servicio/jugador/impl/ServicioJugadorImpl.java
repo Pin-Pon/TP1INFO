@@ -1,6 +1,5 @@
 package com.info.trabajopractico.servicio.jugador.impl;
 
-import com.info.trabajopractico.bootstrap.BootstrapData;
 import com.info.trabajopractico.domain.Equipo;
 import com.info.trabajopractico.domain.Jugador;
 import com.info.trabajopractico.servicio.entrada.impl.InputService;
@@ -14,7 +13,7 @@ public class ServicioJugadorImpl implements ServicioJugador {
     @Override
     public Jugador crearJugador(){
 
-    Jugador jugador = new Jugador();
+    Jugador jugador = new Jugador(nom, ape, medida, goles, partidosJugados, esCapitan, camiseta, equipo);
 
         jugador.setId(UUID.randomUUID());
         System.out.println("INGRESE EL NOMBRE DEL JUGADOR: ");
@@ -32,30 +31,13 @@ public class ServicioJugadorImpl implements ServicioJugador {
         jugador.setEsCapitan(InputService.scanner.hasNextBoolean());
         System.out.println("El numero de camiseta que va usar? ");
         jugador.setNumeroCamiseta(InputService.scanner.nextInt());
-        System.out.println("En que equipo juega: ");
-        jugador.setEquipo(BootstrapData.equipos.get(1));
-        System.out.println("En que posicion juega?: ");
-        jugador.setPosicion(BootstrapData.posicionMap.get("Delantero"));
-
-        jugador = new Jugador(jugador.getNombre(), jugador.getApellido(), jugador.getAltura(), jugador.getGoles(), jugador.getPartidos(), jugador.getEsCapitan(), jugador.getNumeroCamiseta(),jugador.getEquipo(),jugador.getPosicion());
 
 
         return jugador;
 }
 
     public Jugador asignarEquipo(Equipo equipo) {
-        //INTELLIJ ME RECOMENDO ESTO
-
-        Jugador jugador = null;
-        jugador = new Jugador(jugador.getNombre(),
-                jugador.getApellido(),
-                jugador.getAltura(),
-                jugador.getGoles(),
-                jugador.getPartidos(),
-                jugador.getEsCapitan(),
-                jugador.getNumeroCamiseta(),
-                jugador.getEquipo(),
-                jugador.getPosicion());
+        Jugador jugador = new Jugador(nom, ape, medida, goles, partidosJugados, esCapitan, camiseta, equipo);
         jugadorList.put(equipo,jugador);
        return (Jugador) jugadorList;
     }
