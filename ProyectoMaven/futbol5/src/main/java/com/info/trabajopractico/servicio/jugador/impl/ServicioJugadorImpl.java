@@ -7,11 +7,11 @@ import com.info.trabajopractico.servicio.jugador.ServicioJugador;
 
 import java.util.UUID;
 
-import static com.info.trabajopractico.bootstrap.BootstrapData.jugadorList;
+import static com.info.trabajopractico.bootstrap.BootstrapData.jugadorMap;
 
 public class ServicioJugadorImpl implements ServicioJugador {
     @Override
-    public Jugador crearJugador(){
+    public Jugador crearJugador(Equipo equipo){
 
     Jugador jugador = new Jugador();
 
@@ -36,11 +36,15 @@ public class ServicioJugadorImpl implements ServicioJugador {
         return jugador;
 }
 
-    public Jugador asignarEquipo(Equipo equipo) {
+    @Override
+    public Jugador buscarJugadorPorNombre(Equipo equipo) {
         Jugador jugador = new Jugador();
-        jugadorList.put(equipo,jugador);
-       return (Jugador) jugadorList;
+        System.out.println("Ingrese el nombre del jugador a buscar en el equipo: ");
+        jugador.setNombre(InputService.scanner.next());
+        equipo.getEquipoJugadorMap(jugador.getNombre());
+        return jugador;
     }
+
 //jugador.setPosicion(posicionMap.get());
 
 

@@ -147,7 +147,7 @@ public class Jugador {
         @Override
         public String toString() {
                 return "Jugador: " +
-                        "Identificador: " + id +
+                        "Identificador: " + id +'\n' +
                         "Nombre: " + nombre + '\n' +
                         "Apellido: " + apellido + '\n' +
                         "Altura: " + altura + '\n' +
