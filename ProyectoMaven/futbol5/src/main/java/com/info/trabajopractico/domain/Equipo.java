@@ -1,7 +1,6 @@
 package com.info.trabajopractico.domain;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.*;
 
 public class Equipo {
@@ -63,7 +62,7 @@ public class Equipo {
         this.entrenador = entrenador;
     }
 
-    public Map<String, Jugador> getEquipoJugadorMap() {
+    public Map<String, Jugador> getEquipoJugadorMap(String nombre) {
         return equipoJugadorMap;
     }
 
@@ -73,11 +72,10 @@ public class Equipo {
 
     @Override
     public String toString() {
-        return "Equipo{" +
-                "nombre='" + nombre + '\'' +
-                ", fechaCreacion=" + fechaCreacion +
-                ", entrenador=" + entrenador +
-                ", equipoJugadorMap=" + equipoJugadorMap +
-                '}';
+        return "Equipo: " +
+                "Nombre: " + nombre + '\'' +'\n' +
+                "Fecha De Creacion: " + fechaCreacion + '\n' +
+                "Entrenador: " + entrenador +'\n' +
+                "Equipo Jugador Map: " + equipoJugadorMap ;
     }
 }

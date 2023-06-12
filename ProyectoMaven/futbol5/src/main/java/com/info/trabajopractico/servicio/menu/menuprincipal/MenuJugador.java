@@ -16,13 +16,10 @@ public class MenuJugador implements menuJugador {
         System.out.println("========================================================================================");
         System.out.println("");
     }
-    @Override
-    public void menuIntegrante() {
 
-    }
 
     @Override
-    public void menuCrearIntegrante() {
+    public void menuCrearJugador() {
         limpiarPantalla();
         System.out.println("=============Bienvenido a la app : Fut5App");
         System.out.println("=");

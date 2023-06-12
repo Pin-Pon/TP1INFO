@@ -6,23 +6,73 @@ import com.info.trabajopractico.domain.Entrenador;
 import com.info.trabajopractico.domain.Equipo;
 import com.info.trabajopractico.domain.Jugador;
 import com.info.trabajopractico.servicio.entrada.impl.InputService;
+import com.info.trabajopractico.servicio.entrenador.impl.ServicioEntrenadorImpl;
 import com.info.trabajopractico.servicio.equipo.ServicioEquipoInterface;
-import java.util.Map.Entry;
+import com.info.trabajopractico.servicio.jugador.ServicioJugador;
+import com.info.trabajopractico.servicio.jugador.impl.ServicioJugadorImpl;
+import com.info.trabajopractico.servicio.menu.menuprincipal.MenuJugador;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class ServicioEquipoImpl implements ServicioEquipoInterface {
+    private static final MenuJugador menuJugador = new MenuJugador();
+    private static final ServicioEntrenadorImpl servicioEntrenador = new ServicioEntrenadorImpl();
+    public static final ServicioJugador servicioJugador = new ServicioJugadorImpl();
+
     @Override
     public  Equipo crearEquipo(){
+        BootstrapData.menuEquipo.menuCrearEquipos();
         Equipo equipo = new Equipo();
+        Entrenador entrenador = new Entrenador();
         System.out.println("INGRESE EL NOMBRE DEL EQUIPO: ");
         equipo.setNombre(InputService.scanner.next());
         equipo.setFechaCreacion(LocalDate.now());
-        System.out.println("Ingrese el nombre del entrenador: ");
-        //Entrenador entrenador = new Entrenador();
-        equipo.getEntrenador().setNombre(InputService.scanner.next());
+        if (equipo!=null) {
+            //validar equipo
+
+            System.out.println("=    Equipo agregado correctamente...");
+            boolean Seguir =true;
+            do {
+
+                System.out.print("=    Desea Agregar un entrenador al equipo? S/N: ");
+
+
+                String agregarEntrenador = InputService.scanner.nextLine();
+                switch (agregarEntrenador) {
+                    case "S":
+                    case "s":
+                        Entrenador entrenador1 = servicioEntrenador.crearEntrenador(equipo);
+                        break;
+
+                    default:
+                        Seguir=false;
+                }
+            }while (Seguir);
+            boolean agregarJugador = true;
+
+            do {
+                System.out.print("=    Desea Agregar un jugador al equipo? S/N: ");
+                String agregarJugadorRespuesta = InputService.scanner.nextLine();
+
+                switch (agregarJugadorRespuesta) {
+                    case "S":
+                    case "s":
+                        Jugador jugador = servicioJugador.crearJugador(equipo);
+                        equipo.getEquipoJugadorMap(jugador.getNombre()).put(jugador.getEquipo().getNombre(),jugador);
+                        break;
+
+                    default:
+                        agregarJugador = false;
+                }
+            } while (agregarJugador);
+        } else {
+            System.out.println("=     Error en carga");
+            System.out.println("=     Presione ENTER para continuar...");
+            String opcionEquipos = InputService.scanner.nextLine();
+        }
+
 
         return equipo;
     }
@@ -33,10 +83,6 @@ public class ServicioEquipoImpl implements ServicioEquipoInterface {
         if (equipos != null) {
             for (Equipo equipo : equipos) {
                 System.out.println(equipo.toString());
-                for (Map.Entry<String, Jugador> entry: equipo.getEquipoJugadorMap().entrySet()){
-                    System.out.println(entry.getValue().toString());
-
-                }
             }
         }else{
             System.out.println("=     Sin Datos");
@@ -73,7 +119,7 @@ public class ServicioEquipoImpl implements ServicioEquipoInterface {
     public  ArrayList<Jugador> buscarPorNombre(String nombre) {
         ArrayList<Jugador> jugadoresEncontrados = new ArrayList<>();
 
-        for (Jugador p : BootstrapData.jugadorList.values()) {
+        for (Jugador p : BootstrapData.listSoloJugadores) {
             if (p.getNombre().equals(nombre)) {
                 jugadoresEncontrados.add(p);
             }
@@ -83,7 +129,7 @@ public class ServicioEquipoImpl implements ServicioEquipoInterface {
     @Override
     public  ArrayList<Equipo> buscarPorEquipo(Equipo equipo){
         ArrayList<Equipo> equiposEncontrados = new ArrayList<>();
-        for (Equipo p : BootstrapData.jugadorList.keySet()){
+        for (Equipo p : BootstrapData.jugadorMap.keySet()){
             if (p.getNombre().equals(equipo)){
                 equiposEncontrados.add(p);
             }

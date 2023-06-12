@@ -8,15 +8,13 @@ public class MenuEquipos implements menuEquipos {
         System.out.println("");
         System.out.println("");
         System.out.println("");
-        System.out.println("");
-        System.out.println("");
         System.out.println("========================================================================================");
         System.out.println("");
     }
     @Override
     public void menuEquipos() {
         limpiarPantalla();
-        System.out.println("=============Bienvenido a la app : Fut5App");
+        System.out.println("=============Bienvenido a la app : Futbol 5==================");
         System.out.println("=");
         System.out.println("=            Menu de Equipos");
         System.out.println("=");
@@ -33,7 +31,7 @@ public class MenuEquipos implements menuEquipos {
     @Override
     public void menuCrearEquipos() {
         limpiarPantalla();
-        System.out.println("=============Bienvenido a la app : Fut5App");
+        System.out.println("=============Bienvenido a la app : Futbol 5======================");
         System.out.println("=");
         System.out.println("=            Menu de Equipos");
         System.out.println("=            -  Crear Nuevo Equipo ");
@@ -42,7 +40,7 @@ public class MenuEquipos implements menuEquipos {
     @Override
     public void menuBuscarEquipos() {
         limpiarPantalla();
-        System.out.println("=============Bienvenido a la app : Fut5App");
+        System.out.println("=============Bienvenido a la app : Futbol 5==================");
         System.out.println("=");
         System.out.println("=            Menu de Equipos");
         System.out.println("=            -  Buscar equipos ");

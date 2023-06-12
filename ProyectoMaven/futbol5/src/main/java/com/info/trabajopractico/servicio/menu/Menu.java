@@ -10,7 +10,7 @@ import com.info.trabajopractico.servicio.jugador.impl.ServicioJugadorImpl;
 
 public class Menu {
     public static final ServicioEquipoInterface servicioParaEquipo = new ServicioEquipoImpl();
-    public static final ServicioJugador servicioParaIntegrante;
+    public static final ServicioJugador servicioParaIntegrante ;
 
     static {
         servicioParaIntegrante = new ServicioJugadorImpl();
@@ -23,7 +23,7 @@ public class Menu {
 
         Boolean seguir =true;
 
-        InputService.crearEscaner();
+        InputService.createScanner();
 
         while (seguir){
             BootstrapData.menuPrincipal.menuPrincipal();
@@ -31,13 +31,13 @@ public class Menu {
 
 
 
-            String opcion = InputService.scanner.nextLine();
+            int opcion = InputService.scanner.nextInt();
 
             switch (opcion){
-                case "0":
+                case 0:
                     seguir = false;
                     break;
-                case"1":
+                case 1:
                     menuEquipos();
                     break;
             }
@@ -50,22 +50,17 @@ public class Menu {
         Boolean seguirEquipos =true;
         while (seguirEquipos){
             BootstrapData.menuPrincipal.menuPrincipal();
-            String opcionEquipos = InputService.scanner.nextLine();
+            int opcionEquipos = InputService.scanner.nextInt();
 
             switch (opcionEquipos){
-                case "0":
+                case 0:
                     seguirEquipos = false;
                     break;
-                case "1":
+                case 1:
 
                     BootstrapData.equipos.add(servicioParaEquipo.crearEquipo());
                     break;
-        //        case "3":
-          //          servicioParaEquipo.listadoEquipos(
-               //             servicioParaEquipo.buscarPorEquipo(BootstrapData.equipos));
-
-                  //  break;
-                case "4":
+                case 3:
                     ServicioEquipoInterface.listadoEquipos(BootstrapData.equipos);
                     break;
                 default:
