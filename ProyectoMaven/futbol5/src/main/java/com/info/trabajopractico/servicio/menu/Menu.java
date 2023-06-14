@@ -10,7 +10,7 @@ import com.info.trabajopractico.servicio.jugador.impl.ServicioJugadorImpl;
 
 public class Menu {
     public static final ServicioEquipoInterface servicioParaEquipo = new ServicioEquipoImpl();
-    public static final ServicioJugador servicioParaIntegrante ;
+    public static final ServicioJugador servicioParaIntegrante;
 
     static {
         servicioParaIntegrante = new ServicioJugadorImpl();
@@ -23,7 +23,7 @@ public class Menu {
 
         Boolean seguir =true;
 
-        InputService.createScanner();
+        InputService.crearEscaner();
 
         while (seguir){
             BootstrapData.menuPrincipal.menuPrincipal();
@@ -31,13 +31,13 @@ public class Menu {
 
 
 
-            int opcion = InputService.scanner.nextInt();
+            String opcion = InputService.scanner.nextLine();
 
             switch (opcion){
-                case 0:
+                case "0":
                     seguir = false;
                     break;
-                case 1:
+                case"1":
                     menuEquipos();
                     break;
             }
@@ -50,24 +50,23 @@ public class Menu {
         Boolean seguirEquipos =true;
         while (seguirEquipos){
             BootstrapData.menuPrincipal.menuPrincipal();
-            int opcionEquipos = InputService.scanner.nextInt();
+            String opcionEquipos = InputService.scanner.nextLine();
 
             switch (opcionEquipos){
-                case 0:
+                case "0":
                     seguirEquipos = false;
                     break;
-                case 1:
+                case "1":
 
                     BootstrapData.equipos.add(servicioParaEquipo.crearEquipo());
                     break;
-                case 2:
-                    servicioParaEquipo.eliminarEquipo();
-                    break;
-                case 3:
-                    servicioParaEquipo.buscarPorEquipo();
-                    break;
-                case 4:
-                    servicioParaEquipo.listadoEquipos(BootstrapData.equipos);
+        //        case "3":
+          //          servicioParaEquipo.listadoEquipos(
+               //             servicioParaEquipo.buscarPorEquipo(BootstrapData.equipos));
+
+                  //  break;
+                case "4":
+                    ServicioEquipoInterface.listadoEquipos(BootstrapData.equipos);
                     break;
                 default:
                     throw new IllegalStateException("Unexpected value: " + opcionEquipos);
