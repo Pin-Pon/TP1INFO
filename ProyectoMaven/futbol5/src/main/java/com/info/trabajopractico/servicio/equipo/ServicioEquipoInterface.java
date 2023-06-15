@@ -17,7 +17,7 @@ public interface ServicioEquipoInterface {
 
     void eliminarEquipo();
 
-    ArrayList<Jugador> buscarPorNombre(String nombre);
+    ArrayList<Jugador> buscarPorNombre();
 
-    ArrayList<Equipo> buscarPorEquipo(Equipo equipo);
+    ArrayList<Equipo> buscarPorEquipo();
 }

@@ -72,7 +72,7 @@ public class ServicioEquipoImpl implements ServicioEquipoInterface {
 
     }
 
-    public ArrayList<Jugador>buscarPorNombre(String nombre){
+    public ArrayList<Jugador>buscarPorNombre(){
         return null;
     }
 
@@ -80,13 +80,14 @@ public class ServicioEquipoImpl implements ServicioEquipoInterface {
 
 
     @Override
-    public  ArrayList<Equipo> buscarPorEquipo(Equipo equipo){
+    public  ArrayList<Equipo> buscarPorEquipo(){
+        Equipo equipo = new Equipo();
         ArrayList<Equipo> equiposEncontrados = new ArrayList<>();
-        for (Equipo p : BootstrapData.jugadorMap.keySet()){
-            if (p.getNombre().equals(equipo)){
-                equiposEncontrados.add(p);
-            }
+        System.out.println("Ingrese el equipo a buscar: ");
+        equipo.setNombre(InputService.scanner.next());
 
+        if (BootstrapData.equipoMAP.containsValue(equipo)){
+            equiposEncontrados.add(equipo);
         }
         return equiposEncontrados;
     }
