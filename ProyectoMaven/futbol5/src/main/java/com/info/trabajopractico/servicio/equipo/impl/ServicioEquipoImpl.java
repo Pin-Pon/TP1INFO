@@ -2,10 +2,13 @@ package com.info.trabajopractico.servicio.equipo.impl;
 import java.time.LocalDate;
 
 import com.info.trabajopractico.bootstrap.BootstrapData;
+import com.info.trabajopractico.domain.Entrenador;
 import com.info.trabajopractico.domain.Equipo;
 import com.info.trabajopractico.domain.Jugador;
 import com.info.trabajopractico.servicio.entrada.impl.InputService;
+import com.info.trabajopractico.servicio.entrenador.impl.ServicioEntrenadorImpl;
 import com.info.trabajopractico.servicio.equipo.ServicioEquipoInterface;
+import com.info.trabajopractico.servicio.jugador.impl.ServicioJugadorImpl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,13 +17,55 @@ import java.util.Map;
 public class ServicioEquipoImpl implements ServicioEquipoInterface {
     @Override
     public  Equipo crearEquipo(){
+        BootstrapData.menuEquipo.menuCrearEquipos();
         Equipo equipo = new Equipo();
+
         System.out.println("INGRESE EL NOMBRE DEL EQUIPO: ");
-        equipo.setNombre(InputService.scanner.next());
+        equipo.setNombre(InputService.scanner.nextLine());
         equipo.setFechaCreacion(LocalDate.now());
-        System.out.println("Ingrese el nombre del entrenador: ");
-        //Entrenador entrenador = new Entrenador();
-        equipo.getEntrenador().setNombre(InputService.scanner.next());
+
+        if (equipo != null) {
+            System.out.println("=    Equipo agregado correctamente...");
+            boolean agregarEntrenador = true;
+
+            do {
+                System.out.print("=    Desea Agregar un entrenador al equipo? S/N: ");
+                String agregarEntrenadorRespuesta = InputService.scanner.nextLine();
+
+                switch (agregarEntrenadorRespuesta.toLowerCase()) {
+                    case "s":
+                        Entrenador entrenador = ServicioEntrenadorImpl.crearEntrenador(equipo);
+                        equipo.setEntrenador(entrenador);
+                        break;
+
+                    default:
+                        agregarEntrenador = false;
+                        break;
+                }
+            } while (agregarEntrenador);
+
+            boolean agregarJugador = true;
+
+            do {
+                System.out.print("=    Desea Agregar un jugador al equipo? S/N: ");
+                String agregarJugadorRespuesta = InputService.scanner.nextLine();
+
+                switch (agregarJugadorRespuesta.toLowerCase()) {
+                    case "s":
+                        Jugador jugador = ServicioJugadorImpl.crearJugador(equipo);
+                        equipo.agregarJugador(jugador);
+                        break;
+
+                    default:
+                        agregarJugador = false;
+                        break;
+                }
+            } while (agregarJugador);
+        } else {
+            System.out.println("=     Error en carga");
+            System.out.println("=     Presione ENTER para continuar...");
+            String opcionEquipos = InputService.scanner.nextLine();
+        }
 
         return equipo;
     }
