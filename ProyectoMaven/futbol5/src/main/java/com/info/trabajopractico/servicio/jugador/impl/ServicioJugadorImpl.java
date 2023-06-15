@@ -3,6 +3,8 @@ package com.info.trabajopractico.servicio.jugador.impl;
 import com.info.trabajopractico.domain.Equipo;
 import com.info.trabajopractico.domain.Jugador;
 import com.info.trabajopractico.servicio.entrada.impl.InputService;
+import com.info.trabajopractico.servicio.equipo.ServicioEquipoInterface;
+import com.info.trabajopractico.servicio.equipo.impl.ServicioEquipoImpl;
 import com.info.trabajopractico.servicio.jugador.ServicioJugador;
 
 import java.util.UUID;
@@ -10,8 +12,10 @@ import java.util.UUID;
 import static com.info.trabajopractico.bootstrap.BootstrapData.jugadorMap;
 
 public class ServicioJugadorImpl implements ServicioJugador {
+
     @Override
-    public static Jugador crearJugador(Equipo equipo){
+    public Jugador crearJugador(Equipo equipo){
+
 
     Jugador jugador = new Jugador();
 
