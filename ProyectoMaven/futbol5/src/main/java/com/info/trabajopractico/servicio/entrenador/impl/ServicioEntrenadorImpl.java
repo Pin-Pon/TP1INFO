@@ -5,7 +5,7 @@ import com.info.trabajopractico.domain.Equipo;
 import com.info.trabajopractico.servicio.entrada.impl.InputService;
 
 public class ServicioEntrenadorImpl {
-    public Entrenador crearEntrenador(Equipo equipo){
+    public static Entrenador crearEntrenador(Equipo equipo){
         System.out.println("Esta asignando un entrenador para el Equipo: " + equipo);
         Entrenador entrenador = new Entrenador();
         System.out.println("Ingrese el nombre del entrenador: ");
