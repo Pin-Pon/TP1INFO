@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ServicioEquipoImpl implements ServicioEquipoInterface {
+    public static final ServicioJugadorImpl servicioParaJugador = new ServicioJugadorImpl();
     @Override
     public  Equipo crearEquipo(){
         BootstrapData.menuEquipo.menuCrearEquipos();
@@ -52,7 +53,7 @@ public class ServicioEquipoImpl implements ServicioEquipoInterface {
 
                 switch (agregarJugadorRespuesta.toLowerCase()) {
                     case "s":
-                        Jugador jugador = ServicioJugadorImpl.crearJugador(equipo);
+                        Jugador jugador = servicioParaJugador.crearJugador(equipo);
                         equipo.agregarJugador(jugador);
                         break;
 
