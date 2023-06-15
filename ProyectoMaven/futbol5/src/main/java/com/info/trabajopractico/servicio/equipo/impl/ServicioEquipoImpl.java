@@ -2,12 +2,10 @@ package com.info.trabajopractico.servicio.equipo.impl;
 import java.time.LocalDate;
 
 import com.info.trabajopractico.bootstrap.BootstrapData;
-import com.info.trabajopractico.domain.Entrenador;
 import com.info.trabajopractico.domain.Equipo;
 import com.info.trabajopractico.domain.Jugador;
 import com.info.trabajopractico.servicio.entrada.impl.InputService;
 import com.info.trabajopractico.servicio.equipo.ServicioEquipoInterface;
-import java.util.Map.Entry;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,16 +25,17 @@ public class ServicioEquipoImpl implements ServicioEquipoInterface {
         return equipo;
     }
 
-    public static void listadoEquipos(List<Equipo> equipos) {
 
 
+    @Override
+    public  ArrayList<Equipo>listadoEquipos(List<Equipo> equipos) {
+        ArrayList<Equipo> equiposEncontrados = new ArrayList<>();
         if (equipos != null) {
             for (Equipo equipo : equipos) {
-                System.out.println(equipo.toString());
-                for (Map.Entry<String, Jugador> entry: equipo.getEquipoJugadorMap().entrySet()){
-                    System.out.println(entry.getValue().toString());
-
+                if (equipo.getNombre().equals(equipo)){
+                    equiposEncontrados.add(equipo);
                 }
+                System.out.println(equipo.toString());
             }
         }else{
             System.out.println("=     Sin Datos");
@@ -45,7 +44,10 @@ public class ServicioEquipoImpl implements ServicioEquipoInterface {
         System.out.println("=     Presione ENTER para continuar...");
         String opcionEquipos = InputService.scanner.nextLine();
 
+        return equiposEncontrados;
+
     }
+
 
     @Override
     public void eliminarEquipo(Equipo equipo) {
@@ -68,22 +70,17 @@ public class ServicioEquipoImpl implements ServicioEquipoInterface {
 
     }
 
-
-    @Override
-    public  ArrayList<Jugador> buscarPorNombre(String nombre) {
-        ArrayList<Jugador> jugadoresEncontrados = new ArrayList<>();
-
-        for (Jugador p : BootstrapData.jugadorList.values()) {
-            if (p.getNombre().equals(nombre)) {
-                jugadoresEncontrados.add(p);
-            }
-        }
-        return jugadoresEncontrados;
+    public ArrayList<Jugador>buscarPorNombre(String nombre){
+        return null;
     }
+
+
+
+
     @Override
     public  ArrayList<Equipo> buscarPorEquipo(Equipo equipo){
         ArrayList<Equipo> equiposEncontrados = new ArrayList<>();
-        for (Equipo p : BootstrapData.jugadorList.keySet()){
+        for (Equipo p : BootstrapData.jugadorMap.keySet()){
             if (p.getNombre().equals(equipo)){
                 equiposEncontrados.add(p);
             }

@@ -11,13 +11,13 @@ public interface ServicioEquipoInterface {
 
     Equipo crearEquipo();
     //agregarJugador(Jugador nuevo);
-    void eliminarEquipo();
 
-    ArrayList<Equipo>listadoEquipos(List<Equipo> equipos);
+
+    ArrayList<Equipo> listadoEquipos(List<Equipo> equipos);
+
+    void eliminarEquipo(Equipo equipo);
 
     ArrayList<Jugador> buscarPorNombre(String nombre);
 
-    ArrayList<Equipo>buscarPorEquipo();
-
-
+    ArrayList<Equipo> buscarPorEquipo(Equipo equipo);
 }
