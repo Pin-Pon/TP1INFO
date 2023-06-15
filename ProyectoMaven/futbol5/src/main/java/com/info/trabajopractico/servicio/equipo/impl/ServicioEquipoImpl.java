@@ -50,7 +50,7 @@ public class ServicioEquipoImpl implements ServicioEquipoInterface {
 
 
     @Override
-    public void eliminarEquipo(Equipo equipo) {
+    public void eliminarEquipo() {
         Equipo equipo1 = new Equipo();
         System.out.println("INGRESE EL EQUIPO QUE QUIERE ELIMINAR: ");
         equipo1.setNombre(InputService.scanner.next());
@@ -64,9 +64,9 @@ public class ServicioEquipoImpl implements ServicioEquipoInterface {
                 }
             }
             BootstrapData.equipoMAP.remove(clave); // Eliminar el objeto del HashMap
-            System.out.println("Se eliminó el objeto con clave " + clave + " y valor " + equipo);
+            System.out.println("Se eliminó el objeto con clave " + clave + " y valor " + equipo1);
         } else {
-            System.out.println("No se encontró ningún objeto con el valor " + equipo);
+            System.out.println("No se encontró ningún objeto con el valor " + equipo1);
         }
 
 
