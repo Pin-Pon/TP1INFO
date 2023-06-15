@@ -11,7 +11,7 @@ import static com.info.trabajopractico.bootstrap.BootstrapData.jugadorMap;
 
 public class ServicioJugadorImpl implements ServicioJugador {
     @Override
-    public Jugador crearJugador(Equipo equipo){
+    public static Jugador crearJugador(Equipo equipo){
 
     Jugador jugador = new Jugador();
 
