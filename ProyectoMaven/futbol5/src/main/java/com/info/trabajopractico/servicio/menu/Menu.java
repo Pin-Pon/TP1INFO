@@ -72,8 +72,7 @@ public class Menu {
                     break;
                 case "3":
                     servicioParaEquipo.buscarPorEquipo();
-
-
+                    break;
                 case "4":
                     servicioParaEquipo.listadoEquipos(BootstrapData.equipos);
                     break;
