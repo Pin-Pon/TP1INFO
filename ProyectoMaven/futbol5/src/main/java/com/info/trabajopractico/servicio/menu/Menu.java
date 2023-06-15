@@ -60,13 +60,22 @@ public class Menu {
 
                     BootstrapData.equipos.add(servicioParaEquipo.crearEquipo());
                     break;
-        //        case "3":
-          //          servicioParaEquipo.listadoEquipos(
-               //             servicioParaEquipo.buscarPorEquipo(BootstrapData.equipos));
+                    /**
+                System.out.println("=     0 - Volver");
+                System.out.println("=     1 - Crear Equipo");
+                System.out.println("=     2 - Borrar Equipo");
+                System.out.println("=     3 - Buscar Equipo");
+                System.out.println("=     4 - Ver Todos los equipos");
+                     **/
+                case "2":
+                    servicioParaEquipo.eliminarEquipo();
+                    break;
+                case "3":
+                    servicioParaEquipo.buscarPorEquipo();
 
-                  //  break;
+
                 case "4":
-                    ServicioEquipoInterface.listadoEquipos(BootstrapData.equipos);
+                    servicioParaEquipo.listadoEquipos(BootstrapData.equipos);
                     break;
                 default:
                     throw new IllegalStateException("Unexpected value: " + opcionEquipos);
