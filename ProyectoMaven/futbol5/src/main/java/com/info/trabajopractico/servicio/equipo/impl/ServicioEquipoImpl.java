@@ -51,12 +51,14 @@ public class ServicioEquipoImpl implements ServicioEquipoInterface {
 
     @Override
     public void eliminarEquipo(Equipo equipo) {
+        Equipo equipo1 = new Equipo();
+        System.out.println("INGRESE EL EQUIPO QUE QUIERE ELIMINAR: ");
+        equipo1.setNombre(InputService.scanner.next());
 
-
-        if (BootstrapData.equipoMAP.containsValue(equipo)) {
+        if (BootstrapData.equipoMAP.containsValue(equipo1)) {
             String clave = "";
             for (Map.Entry<String,Equipo> entry : BootstrapData.equipoMAP.entrySet()) {
-                if (entry.getValue().equals(equipo)) {
+                if (entry.getValue().equals(equipo1)) {
                     clave = entry.getKey(); // Obtener la clave del objeto
                     break;
                 }
