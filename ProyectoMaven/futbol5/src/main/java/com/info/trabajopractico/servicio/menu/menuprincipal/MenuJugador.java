@@ -7,20 +7,8 @@ import com.info.trabajopractico.servicio.menu.menuJugador;
 
 public class MenuJugador implements menuJugador {
 
-    private void limpiarPantalla() {
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("========================================================================================");
-        System.out.println("");
-    }
-
-
     @Override
     public void menuCrearJugador() {
-        limpiarPantalla();
         System.out.println("=============Bienvenido a la app : Fut5App");
         System.out.println("=");
         System.out.println("=            Menu de Integrantes");

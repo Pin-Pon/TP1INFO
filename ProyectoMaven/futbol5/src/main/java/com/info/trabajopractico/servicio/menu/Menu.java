@@ -1,5 +1,6 @@
 package com.info.trabajopractico.servicio.menu;
 import com.info.trabajopractico.domain.Equipo;
+import com.info.trabajopractico.servicio.entrada.impl.InputService;
 import com.info.trabajopractico.bootstrap.BootstrapData;
 import com.info.trabajopractico.servicio.entrada.impl.InputService;
 import com.info.trabajopractico.servicio.equipo.ServicioEquipoInterface;
@@ -28,16 +29,13 @@ public class Menu {
         while (seguir){
             BootstrapData.menuPrincipal.menuPrincipal();
 
-
-
-
-            String opcion = InputService.scanner.nextLine();
+            int opcion = InputService.scanner.nextInt();
 
             switch (opcion){
-                case "0":
+                case 0:
                     seguir = false;
                     break;
-                case"1":
+                case 1:
                     menuEquipos();
                     break;
             }
@@ -50,13 +48,13 @@ public class Menu {
         Boolean seguirEquipos =true;
         while (seguirEquipos){
             BootstrapData.menuPrincipal.menuPrincipal();
-            String opcionEquipos = InputService.scanner.nextLine();
+            int opcionEquipos = InputService.scanner.nextInt();
 
             switch (opcionEquipos){
-                case "0":
+                case 0:
                     seguirEquipos = false;
                     break;
-                case "1":
+                case 1:
 
                     BootstrapData.equipos.add(servicioParaEquipo.crearEquipo());
                     break;
@@ -67,13 +65,13 @@ public class Menu {
                 System.out.println("=     3 - Buscar Equipo");
                 System.out.println("=     4 - Ver Todos los equipos");
                      **/
-                case "2":
+                case 2:
                     servicioParaEquipo.eliminarEquipo();
                     break;
-                case "3":
+                case 3:
                     servicioParaEquipo.buscarPorEquipo();
                     break;
-                case "4":
+                case 4:
                     servicioParaEquipo.listadoEquipos(BootstrapData.equipos);
                     break;
                 default:

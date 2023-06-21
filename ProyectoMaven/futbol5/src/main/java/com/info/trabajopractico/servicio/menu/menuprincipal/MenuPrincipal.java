@@ -6,20 +6,13 @@ import com.info.trabajopractico.servicio.menu.menuPrincipalInterface;
 
 public class MenuPrincipal implements menuPrincipalInterface {
    // @Override
-    private void limpiarPantalla() {
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("========================================================================================");
-        System.out.println("");
-    }
+
 
 
     @Override
     public void menuPrincipal() {
-        limpiarPantalla();
+
+
         System.out.println("=============Bienvenido a la app : Fut5App");
         System.out.println("=");
         System.out.println("=            Menu Principal");
